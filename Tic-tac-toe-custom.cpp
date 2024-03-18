@@ -21,7 +21,7 @@ int eval(board x)
         bool isAEq=true;
         int frt=bd[i][0];
         for (int j=1;j<bSize;j++){
-            isAEq&&=(bd[i][j]==frt);
+            isAEq=isAEq&&(bd[i][j]==frt);
         }
         if (isAEq && (frt!=0)){
             return frt;
@@ -31,7 +31,7 @@ int eval(board x)
         bool isAEq=true;
         int frt=bd[0][i];
         for (int j=1;j<bSize;j++){
-            isAEq&&=(bd[j][i]==frt);
+            isAEq=isAEq&&(bd[j][i]==frt);
         }
         if (isAEq && (frt!=0)){
             return frt;
@@ -40,7 +40,7 @@ int eval(board x)
     bool aeq1=true;
     int frt1=bd[0][0];
     for (int i=1;i<bSize;i++){
-        aeq1&&=(bd[i][i]==frt1);
+        aeq1=aeq1&&(bd[i][i]==frt1);
     }
     if (aeq1&&(frt1!=0)){
         return frt1;
@@ -48,7 +48,7 @@ int eval(board x)
     bool aeq2=true;
     int frt2=bd[0][bSize-1];
     for (int i=1;i<bSize;i++){
-        aeq2&&=(bd[i][bSize-1-i]==frt2);
+        aeq2=aeq2&&(bd[i][bSize-1-i]==frt2);
     }
     if (aeq1&&(frt2!=0)){
         return frt2;
