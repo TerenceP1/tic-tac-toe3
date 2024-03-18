@@ -75,9 +75,9 @@ pair<pair<int, int>, int> move(board m_bd, bool turn, int depth)
 	{
 		pair<int, int> bMove{ -2, -2 };
 		int best = -1;
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < bSize; i++)
 		{
-			for (int j = 0; j < 3; j++)
+			for (int j = 0; j < bSize; j++)
 			{
 				if (m_bd[i][j] == 0)
 				{
@@ -103,9 +103,9 @@ pair<pair<int, int>, int> move(board m_bd, bool turn, int depth)
 	{
 		pair<int, int> bMove{ -2, -2 };
 		int best = 1;
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < bSize; i++)
 		{
-			for (int j = 0; j < 3; j++)
+			for (int j = 0; j < bSize; j++)
 			{
 				if (m_bd[i][j] == 0)
 				{
@@ -131,6 +131,10 @@ pair<pair<int, int>, int> move(board m_bd, bool turn, int depth)
 
 int main()
 {
+	cout<<"How big do you want the board to be? ";
+	cin>>bSize;
+	bd.resize(bSize);
+	for (int i=0;i<bSize;i++){bd[i].resize(bSize);for (int j=0;j<bSize;j++){bd[i][j]=0;}}
 	bool mTurn;
 	cout << "Who do you want to be (1=X, 0=O)? ";
 	cin >> mTurn;
